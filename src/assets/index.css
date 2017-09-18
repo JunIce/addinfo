@@ -16,7 +16,7 @@
 .uploadbtn-btn input{position: absolute;opacity:0;top:0;left:0;width:100%;height:36px;cursor:pointer;}
 .uploadbtn p{font-size: 13px;color: #999;text-align: center;margin-top: 24px;}
 .uploadbtn span{color: #ff6666;display: block;text-align: center;margin-top: 5px;font-size: 13px;}
-.pic-container{text-align: center;}
+.pic-container{text-align: center;    width: 600px;    margin: auto;position: relative;}
 .pic-item{position: relative;max-width: 600px;margin: 0 auto;padding: 30px 0;text-align: center;}
 .del-pic-item{width:20px;height:20px;background-image:url(./closed.png);background-size:contain;display:inline-block;cursor: pointer;position: absolute;top: 0;right: 0;}
 .pic-sub{width: 120px;height: 36px;color: #fff;display: block;text-align: center;margin: 0 auto;border: none;background: #ff6666;font-size: 14px;border-radius: 5px;outline:none;}
@@ -149,4 +149,90 @@
 }
 .tipsBox-main{
   padding: 30px 18px;
+}
+
+
+
+.links-add-btn{
+  height:36px;
+  padding:0 10px;
+  background-color:#ededed;
+  line-height:36px;
+  font-size:14px;
+  color:#333;
+  border:1px solid #999;
+  border-radius:5px;
+  outline:none;
+  cursor:pointer;
+  margin-top:20px;
+}
+
+.link-box{
+  padding: 22px 22px 12px;
+  background-color:rgba(0,0,0,.6);
+  position: absolute;
+  box-sizing:border-box;
+  z-index: 3
+}
+
+
+.link-edit{
+  width:100%;
+  height:77px;
+}
+.link-edit textarea{
+  width:100%;
+  height:100%;
+  resize: none;
+  border:none;
+  outline:none;
+  background-color: transparent;
+  color:#fff;
+  font-size:14px;
+  overflow: hidden; white-space: wrap; text-overflow: ellipsis;
+}
+.link-btn{
+  margin-top:10px;
+}
+.link-btn button{
+  line-height:30px;
+  width:60px;
+  background-color :#aaa;
+  color:#fff;
+  outline:none;
+  cursor:pointer;
+  border-radius : 5px;
+  border:none;
+  margin:0 30px;
+}
+.link-trangle{
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid rgba(0,0,0,.6);
+  position: absolute;
+}
+
+.link-tips{
+  width:124px;
+  height:52px;
+  border-radius:5px;
+  line-height:52px;
+  font-size:14px;
+  background-color:rgba(0,0,0,.6);
+  color:#fff;
+  position: absolute;
+  z-index:1;
+}
+.link-tips-trangle{
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid rgba(0,0,0,.6);
+  position: absolute;
+  left:-12px;
+  top:23px;
+  transform:rotate(-90deg)
 }
