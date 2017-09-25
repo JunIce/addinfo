@@ -18,7 +18,7 @@
 .uploadbtn span{color: #ff6666;display: block;text-align: center;margin-top: 5px;font-size: 13px;}
 .pic-container{text-align: center;    width: 600px;    margin: auto;position: relative;}
 .pic-item{position: relative;max-width: 600px;margin: 0 auto;padding: 30px 0;text-align: center;}
-.del-pic-item{width:20px;height:20px;background-image:url(./closed.png);background-size:contain;display:inline-block;cursor: pointer;position: absolute;top: 0;right: 0;}
+.del-pic-item{width:20px;height:20px;background-image:url(./closed.png);background-size:contain;display:inline-block;cursor: pointer;position: absolute;top: -30px;right: 0;}
 .pic-sub{width: 120px;height: 36px;color: #fff;display: block;text-align: center;margin: 0 auto;border: none;background: #ff6666;font-size: 14px;border-radius: 5px;outline:none;}
 .pic-album{position: relative;}
 .pic-album label{background-color:#fff;position: relative;width: 304px;height: 40px;display: inline-block;line-height: 40px;border-bottom: 1px solid #e3e3e3;border-top: 1px solid #e3e3e3;border-left: 1px solid #e3e3e3;border-radius:5px 0 0 5px;overflow:hidden;text-indent: 15px;cursor: pointer;font-size: 14px;color: #999;float: left;}

@@ -7,7 +7,7 @@
     <template v-if="!photoimg">
      
     <div class="uploadbtn">
-      <form id="imgUpLoad">
+      <form id="imgUpLoad" ref="imgUpLoad">
         <div class="uploadbtn-btn" @click="upload($event)" >上传图片<input type="file" id="upComm" @change="fileChange($event)"></div>
       </form> 
       <p>上传图片需小于2M,支持PNG,JPG格式</p> 
@@ -20,6 +20,7 @@
         <!-- imgcontainer -->
         <div :style="size">
          <img :src="photoimg">
+         <i class="del-pic-item" @click="clearFormPic"></i>
          <div 
           :style="mask" 
           v-if="maskShow"
@@ -41,7 +42,7 @@
         <div v-if="addLink" class="link-box" :style="linkBox">
           <div class="link-trangle" :style="trangle"></div>
           <div class="link-edit">
-              <textarea name="link" v-model="linkText">{{linkText}}</textarea>
+              <textarea name="link" v-model="linkText" placeholder="请粘贴物品地址....">{{linkText}}</textarea>
           </div>
           <div class="link-btn">
               <button @click.self.prevent="addLink = !addLink" >取消</button>
@@ -52,9 +53,11 @@
         
         <!-- link -->
         <template>
-          <div class="link-tips" v-for="(data,index) in positionData" :style="data" :id="'link_'+index">
+          <div class="link-tips" v-for="(data,index) in positionData" :style="'top:'+ data.top + ';left:' + data.left" :id="'link_'+index">
+            <a :href="data.link" target="_blank" class="link-url">
             <div class="link-tips-trangle"></div>
              <p>物品购买地址</p>
+             </a>
           </div>
         </template>
         <!-- link -->
@@ -88,7 +91,7 @@ export default {
     };
   },
   mounted(){
-    // this.photoimg = "http://img.reretu.com/2017/09/15/12fd4c2e118aa138_600x600.jpg"
+    // this.photoimg = "https://img.reretu.com/2017/09/18/27f3156ec7d12d13_600x600.jpg"
     // this.getSize()
   },
   methods:{
@@ -99,6 +102,11 @@ export default {
         MsgBox('请先登录');
         return;
       }   
+    },
+    clearFormPic(){
+      this.photoimg=this.titlepic='';
+      this.linkCollections=[];
+      this.maskShow=this.addLink=false;
     },
     fileChange(e){
       let self = this
@@ -223,6 +231,7 @@ export default {
     positionData(){
       return this.linkCollections.reduce((pre,aft) => {
         pre.push({
+          link : aft.link,
           top: aft.ratio.y * this.height - 23 + 'px',
           left: aft.ratio.x * this.width + 12 + 'px',
         })
@@ -235,3 +244,6 @@ export default {
   }
 };
 </script>
+<style>
+  .link-url{color:#fff;}
+</style>
